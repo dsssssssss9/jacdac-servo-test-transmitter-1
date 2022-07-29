@@ -1,5 +1,10 @@
 modules.rotaryEncoder1.onPositionChanged(function () {
     Pos = Pos + (modules.rotaryEncoder1.position() - Old_Pos)
+    if (Pos > 180) {
+        Pos = 180
+    } else if (Pos < 0) {
+        Pos = 0
+    }
     Old_Pos = Pos
 })
 modules.button1.onEvent(jacdac.ButtonEvent.Down, function () {
