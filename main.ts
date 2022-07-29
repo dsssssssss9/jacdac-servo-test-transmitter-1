@@ -1,3 +1,14 @@
+/**
+ * Demo to send the desired servo angle via radio
+ * 
+ * Uses Jacdac Rotary Encoder Button + 2 Jacdac Keycap button
+ * 
+ * Press encoder button to see current desired angle
+ * 
+ * press keycap button to send this angle via radio
+ * 
+ * Make sure to zero the indicator mark on the encoder knob BEFORE powering up / resetting Transmitter!!
+ */
 // Display current angle on Micro:Bit when rotary button pushed down
 modules.button1.onEvent(jacdac.ButtonEvent.Down, function () {
     basic.showNumber(Pos)
