@@ -3,8 +3,11 @@ modules.rotaryEncoder1.onPositionChanged(function () {
     Old_Pos = Pos
 })
 modules.button1.onEvent(jacdac.ButtonEvent.Down, function () {
-    music.playSoundEffect(music.builtinSoundEffect(soundExpression.happy), SoundExpressionPlayMode.UntilDone)
     basic.showNumber(Pos)
+})
+modules.button2.onEvent(jacdac.ButtonEvent.Down, function () {
+    music.playSoundEffect(music.createSoundEffect(WaveShape.Noise, 1000, 999, 255, 0, 471, SoundExpressionEffect.None, InterpolationCurve.Curve), SoundExpressionPlayMode.UntilDone)
+    radio.sendNumber(Pos)
 })
 let Old_Pos = 0
 let Pos = 0
